@@ -1,7 +1,7 @@
 class Book < ApplicationRecord
   before_update :before_logs
   after_update :after_logs
-
+  after_destroy :destroy_spec
   private
   def before_logs
     puts "Book updating"
@@ -10,4 +10,5 @@ class Book < ApplicationRecord
   def after_logs
     puts "Book updated"
   end
+
 end
